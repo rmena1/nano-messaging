@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - messagingDB:/var/lib/postgresql/data
+    env_file: 
+      - ./.env_db
+    ports:
+      - "5432:5432"
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile.dev
+    container_name: api
+    restart: always
+    volumes:
+      - /usr/src/api/node_modules
+      - ./api/:/usr/src/api
+    ports:
+      - "7777:7777"
+      - "9229:9229"
+    command:
+      "npm run debug"
+    env_file: 
+      - ./.env
+    environment:
+      - DUMMY=0
+    depends_on:
+      - db
+      - pubsub
+  pubsub:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+volumes:
+  messagingDB:

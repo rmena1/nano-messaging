@@ -1,0 +1,12 @@
+FROM node:12
+
+WORKDIR /usr/src/api
+
+RUN npm install -g nodemon
+
+COPY package*.json ./
+
+
+RUN npm install
+
+COPY . .
