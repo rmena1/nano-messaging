@@ -31,7 +31,7 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aplication_name: nano-messaging-dcconocidos
+          application_name: nano-messaging-dcconocidos
           environment_name: Nanomessagingdcconocidos-env
           version_label: "nano-messaging-dcconocidos-deployment-${{ steps.format-time.outputs.replaced }}"
           region: us-east-1
