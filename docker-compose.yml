@@ -7,7 +7,7 @@ services:
     env_file: 
       - ./.env_db
     ports:
-      - "5432:5432"
+      - "5433:5433"
   api:
     build:
       context: api
