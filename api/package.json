@@ -33,6 +33,7 @@
     "koa-websocket": "^6.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "newrelic": "^8.14.1",
     "node-redis-connection-pool": "^3.1.0",
     "nodemon": "^2.0.16",
     "pg": "^8.6.0",
